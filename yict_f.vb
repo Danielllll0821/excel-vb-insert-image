@@ -13,10 +13,11 @@ For Each Item In myArr
         'MsgBox Item
     
     'Cells(j, 1).Value = Item
-    PicLeft1 = Range("B" & j).Left '图片左边位置
-	PicTop1 = Range("B" & j).Top  '图片顶部位置
+    PicLeft1 = Range("B" & j).Left '图片左边位置，即单元格的左边
+	PicTop1 = Range("B" & j).Top  '图片顶部位置，即单元格的顶部
 	
     Range("B" & j).Select
+	'-1表示图片按原文件大小插入https://msdn.microsoft.com/zh-cn/vba/excel-vba/articles/shapes-addpicture-method-excel
     ActiveSheet.Shapes.AddPicture("D:\test\img\" & Item & "- CPU - last7day.png", False, True, PicLeft1, PicTop1, -1, -1).Select
     PicLeft2 = Range("D" & j).Left '图片左边位置
 	PicTop2 = Range("D" & j).Top  '图片顶部位置    
